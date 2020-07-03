@@ -119,5 +119,10 @@ namespace Contact.Service.Controllers
 
             return Ok(_contactService.GetContactsByState(state));
         }
+        [HttpGet("serverinfo")]
+        public IActionResult GetServerInfo()
+        {
+            return Ok(new JsonResult(Environment.MachineName + " " + Environment.Version));
+        }
     }
 }
